@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { paramsType } from './params-type';
 
 @Component({
   selector: 'app-bio',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BioComponent implements OnInit {
 
-  constructor() { }
+  params: paramsType = {
+    id: '',
+    name: '',
+    apellido: ''
+  };
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log('Params: ', this.activatedRoute.snapshot.params);
+    this.params = this.activatedRoute.snapshot.queryParams as paramsType;
+    console.log('Query Params: ', this.activatedRoute.snapshot.queryParams);
   }
 
 }
