@@ -7,18 +7,22 @@ import { AppRouterModule } from './app.router.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BioComponent } from './bio/bio.component';
 import { ContactModule } from './contact/contact.module';
+import { MrxComponent } from './mrx/mrx/mrx.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     NotFoundComponent,
-    BioComponent
+    BioComponent,
+    MrxComponent
   ],
   imports: [
     BrowserModule,
     ContactModule,
     AppRouterModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [LayoutComponent]

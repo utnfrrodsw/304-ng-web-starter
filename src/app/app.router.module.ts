@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BioComponent } from './bio/bio.component';
 import { AuthGuard } from './auth.guard';
+import { MrxComponent } from './mrx/mrx/mrx.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'bio/:id/:name',
     component: BioComponent
+  },
+  {
+    path: 'mrx',
+    component: MrxComponent,
   },
   // {
   //   path: 'contacto',
