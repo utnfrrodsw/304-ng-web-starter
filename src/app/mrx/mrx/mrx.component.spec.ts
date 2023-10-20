@@ -1,6 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MrxComponent } from './mrx.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ApiService } from 'src/app/services/api.servce';
+
+class ApiServiceMock {
+  getRandomUser() {
+    return {};
+  }
+}
 
 describe('MrxComponent', () => {
   let component: MrxComponent;
@@ -8,13 +16,19 @@ describe('MrxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MrxComponent ]
+      imports: [ HttpClientTestingModule ],
+      declarations: [ MrxComponent ],
+      providers: [
+        //  ApiService
+        { provide: ApiService, useClass: ApiServiceMock }
+      ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MrxComponent);
+    const service = TestBed.inject(ApiService);
+    const fixture = TestBed.createComponent(MrxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
