@@ -27,7 +27,7 @@ describe('LayoutComponent', () => {
 
   it('should navigate to some url', () => {
     const router = TestBed.inject(Router);
-    const spyNavigate = spyOn(router, 'navigate');
+    const spyNavigate = jest.spyOn(router, 'navigate').mockImplementation();
     component.goToTarget('some-url');
     expect(spyNavigate).toHaveBeenCalled();
     expect(spyNavigate).toHaveBeenCalledWith(['some-url']);
@@ -35,7 +35,7 @@ describe('LayoutComponent', () => {
 
   it('should navigate to login', () => {
     const router = TestBed.inject(Router);
-    const spyNavigate = spyOn(router, 'navigate');
+    const spyNavigate = jest.spyOn(router, 'navigate').mockImplementation();
     component.goToTarget('some-url2');
     expect(spyNavigate).toHaveBeenCalled();
     expect(spyNavigate).toHaveBeenCalledWith(['login']);

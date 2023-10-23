@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MrxComponent } from './mrx.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ApiService } from 'src/app/services/api.servce';
+import { ApiService } from '../../services/api.servce';
 
 class ApiServiceMock {
   getRandomUser() {

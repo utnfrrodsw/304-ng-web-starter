@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.servce';
+import { ApiService } from '../../services/api.servce';
 
 @Component({
   selector: 'app-mrx',
